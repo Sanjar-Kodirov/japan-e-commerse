@@ -16,3 +16,10 @@ npm install @mui/icons-material
 npm install @fontsource/roboto
 
 
+
+
+
+<!-- static -->
+1. navbar
+2. footer 
+3. header

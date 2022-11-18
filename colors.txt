@@ -1,0 +1,27 @@
+primary color: #bfa000;
+primary color dark: #bea102;
+primary color dark 2: #c2a712;
+primary color light: #f2eccc;
+
+secondary color: #d84516;
+secondaty color light: #d84518;
+secondary color light2: #d84416;
+
+brown-color: #754c23;
+
+
+gray-main: #999999;
+gray light: #f2f2f2;
+dark-gray for text: #343434;
+text-primary: #000000
+
+yellow: #ffdb1b;
+
+pink-dark: #d2145a;
+blue: #3089c9;
+blue dark: #306cb0;
+
+sidebar black color: #030305;
+
+black main: #000000;
+
