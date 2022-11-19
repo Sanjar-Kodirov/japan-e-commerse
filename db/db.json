@@ -1,5 +1,16 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
+  "products": [
+    { 
+      "id": 1, 
+      "title": "Обильные категории продуктов", 
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus error esse possimus voluptatem, expedita perspiciatis consequatur delectus perferendis repellendus non provident iusto laboriosam at eveniet! Voluptatem doloremque explicabo eum quas.",
+      "category": "бытовая техника",
+      "image": "https://goodwell.uz/media/GRF-B564BL6-600x600.apng"
+    },
+    {
+
+    }
+  ],
   "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": { "name": "typicode" }
 }
