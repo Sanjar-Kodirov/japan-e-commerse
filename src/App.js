@@ -8,7 +8,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Typography backgroundColor="" color="">
-          Hello japan
+          Hello japan s
         </Typography>
       </ThemeProvider>
     </>
