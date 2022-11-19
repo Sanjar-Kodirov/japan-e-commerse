@@ -8,6 +8,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Typography backgroundColor="" color="">
+          <h1>this one is true one</h1>
         </Typography>
       </ThemeProvider>
     </>
