@@ -1,5 +1,55 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
+  "products": [
+    {
+      "id": 1,
+      "title": "Обильные категории продуктов",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus error esse possimus voluptatem, expedita perspiciatis consequatur delectus perferendis repellendus non provident iusto laboriosam at eveniet! Voluptatem doloremque explicabo eum quas.",
+      "category": "бытовая техника",
+      "image": "https://goodwell.uz/media/GRF-B564BL6-600x600.apng"
+    },
+    {
+      "id": 2,
+      "title": "Обильные категории продуктов",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus error esse possimus voluptatem, expedita perspiciatis consequatur delectus perferendis repellendus non provident iusto laboriosam at eveniet! Voluptatem doloremque explicabo eum quas.",
+      "category": "бытовая техника",
+      "image": "https://www.lg.com/uz_ru/images/refrigerators/md07543245/gallery/D-1.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Обильные категории продуктов",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus error esse possimus voluptatem, expedita perspiciatis consequatur delectus perferendis repellendus non provident iusto laboriosam at eveniet! Voluptatem doloremque explicabo eum quas.",
+      "category": "phone",
+      "image": "https://www.creditasia.uz/upload/iblock/5ab/kholodilnik-samsung-rb29ferndsa-w3.jpg"
+    },
+    {
+      "id": 4,
+      "title": "MacBook Air",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus error esse possimus voluptatem, expedita perspiciatis consequatur delectus perferendis repellendus non provident iusto laboriosam at eveniet! Voluptatem doloremque explicabo eum quas.",
+      "category": "camera",
+      "image": "https://c.dns-shop.ru/thumb/st4/fit/760/600/a3f66a54ce7ecfb7ce793588001ef2d8/q93_07021d6442cc1b2e7906e91cd3e9d00600cc11a8e8344689fd7c9658ba1d5093.jpg"
+    },
+    {
+      "id": 5,
+      "title": "MacBook Air-1",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus error esse possimus voluptatem, expedita perspiciatis consequatur delectus perferendis repellendus non provident iusto laboriosam at eveniet! Voluptatem doloremque explicabo eum quas.",
+      "category": "компьютер",
+      "image": "https://i.insider.com/632c66b0f576c60018fc3421?width=1136&format=jpeg"
+    },
+    {
+      "id": 6,
+      "title": "MacBook Air(m2)",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus error esse possimus voluptatem, expedita perspiciatis consequatur delectus perferendis repellendus non provident iusto laboriosam at eveniet! Voluptatem doloremque explicabo eum quas.",
+      "category": "компьютер",
+      "image": "https://www.apple.com/newsroom/images/product/mac/standard/Apple-MacBook-Air-M2-availability-July-2022-hero_big.jpg.slideshow-xlarge_2x.jpg"
+    },
+    {
+      "id": 7,
+      "title": "MacBook Air(m1)",
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus error esse possimus voluptatem, expedita perspiciatis consequatur delectus perferendis repellendus non provident iusto laboriosam at eveniet! Voluptatem doloremque explicabo eum quas.",
+      "category": "инструмент",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjFrmDzqSAh8bWg9hnFhCMFwdX1_8OkW3oNQ&usqp=CAU"
+    }
+  ],
   "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": { "name": "typicode" }
 }
