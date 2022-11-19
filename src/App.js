@@ -10,7 +10,8 @@ function App() {
         <CssBaseline />
         <Typography backgroundColor="" color="">
           <Navbar />
-          hello form murad
+          hello form murat
+          <h1>this one is true one</h1>
         </Typography>
       </ThemeProvider>
     </>
