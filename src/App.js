@@ -9,6 +9,7 @@ function App() {
         <CssBaseline />
         <Typography backgroundColor="" color="">
           Hello japan s
+          from me
         </Typography>
       </ThemeProvider>
     </>
