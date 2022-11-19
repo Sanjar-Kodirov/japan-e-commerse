@@ -3,6 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import { CssBaseline } from "@mui/material";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -10,8 +11,7 @@ function App() {
         <CssBaseline />
         <Typography backgroundColor="" color="">
           <Navbar />
-          hello form murat
-          <h1>this one is true one</h1>
+          <Footer />
         </Typography>
       </ThemeProvider>
     </>
