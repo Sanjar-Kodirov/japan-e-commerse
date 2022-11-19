@@ -8,7 +8,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Typography backgroundColor="" color="">
-          hello form murad
+          <h1>this one is true one</h1>
         </Typography>
       </ThemeProvider>
     </>
