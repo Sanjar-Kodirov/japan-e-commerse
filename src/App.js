@@ -10,8 +10,8 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Typography backgroundColor="" color="">
-          <Navbar />
-          <Footer />
+          {/* <Navbar /> */}
+          <Footer/>
         </Typography>
       </ThemeProvider>
     </>
