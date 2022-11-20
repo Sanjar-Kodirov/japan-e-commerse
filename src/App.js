@@ -11,9 +11,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Typography backgroundColor="" color="">
-          {/* <Navbar />
           <ProductCard/>
-          <Footer/> */}
         </Typography>
       </ThemeProvider>
     </>
