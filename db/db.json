@@ -50,6 +50,13 @@
       "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjFrmDzqSAh8bWg9hnFhCMFwdX1_8OkW3oNQ&usqp=CAU"
     }
   ],
+  "categories": [
+    "бытовая техника",
+    "phone",
+    "camera",
+    "компьютер",
+    "инструмент"
+  ],
   "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": { "name": "typicode" }
 }
