@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Layout from "./components/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import ProductCard from './components/ProductCard';
 function App() {
   return (
     <>
@@ -18,6 +19,9 @@ function App() {
             <Route index element={<Home />} />
           </Route>
         </Routes>
+        <Typography backgroundColor="" color="">
+          <ProductCard/>
+        </Typography>
       </ThemeProvider>
     </>
   );

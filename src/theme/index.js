@@ -37,6 +37,9 @@ export const theme = createTheme({
         textSizeLarge: {
           padding: "12px 16px",
         },
+        iconSize:{
+          padding: "0 30px",
+        },
       },
     },
     MuiButtonBase: {
