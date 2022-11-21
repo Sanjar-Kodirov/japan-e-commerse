@@ -5,17 +5,24 @@ import { CssBaseline } from "@mui/material";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import ProductCard from './components/ProductCard';
+import Layout from "./components/Layout";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ProductCard from "./components/ProductCard";
 function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Typography backgroundColor="" color="">
-        <Navbar/>
-          <Header />
-          <Footer/>
-        </Typography>
+        <Navbar />
+        <Header />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/about" element={<ProductCard />} />
+          </Route>
+        </Routes>
+        <Footer />
       </ThemeProvider>
     </>
   );
