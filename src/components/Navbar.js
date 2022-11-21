@@ -13,7 +13,7 @@ import IconButton from '@mui/material/IconButton';
 
 const Navbar = () => {
     return (
-        <Box>
+        <Box sx={{padding: "1rem 0"}}>
             <Container>
                 <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                     <Box sx={{display: "flex", alignItems:"center", gap: "1rem"}}>

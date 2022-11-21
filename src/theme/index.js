@@ -282,7 +282,7 @@ export const theme = createTheme({
     h2: {
       fontWeight: 700,
       fontSize: "3rem",
-      lineHeight: 1.375,
+      lineHeight: 1.775,
     },
     h3: {
       fontWeight: 700,

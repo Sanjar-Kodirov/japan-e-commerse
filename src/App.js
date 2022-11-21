@@ -3,6 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import { CssBaseline } from "@mui/material";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ProductCard from './components/ProductCard';
 function App() {
@@ -11,7 +12,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Typography backgroundColor="" color="">
-          <ProductCard/>
+        <Navbar/>
+          <Header />
+          <Footer/>
         </Typography>
       </ThemeProvider>
     </>
