@@ -1,21 +1,23 @@
 import React from "react";
-import { Outlet } from "@mui/icons-material";
+import { Outlet } from "react-router-dom";
 import { Container } from "@mui/system";
 import { Box } from "@mui/system";
 import Sidebar from "./Sidebar";
+import Footer from "./Footer";
+import Navbar from "./Navbar";
 const Layout = () => {
   return (
     <>
+      <Navbar />
       <Container>
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            // alignItems: "center",
           }}
         >
           <Sidebar />
-          <Outlet />
+          <Outlet sx={{ flexGrow: 1 }} />
         </Box>
       </Container>
     </>

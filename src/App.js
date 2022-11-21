@@ -8,23 +8,27 @@ import Footer from "./components/Footer";
 import Layout from "./components/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import ProductCard from './components/ProductCard';
+import ProductCard from "./components/ProductCard";
 function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <Navbar />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
+            <Route path="/about" element={<ProductCard />} />
           </Route>
         </Routes>
+<<<<<<< HEAD
+        <Footer />
+=======
         <Typography backgroundColor="" color="">
         <Navbar/>
           <Header />
           <Footer/>
         </Typography>
+>>>>>>> a50219f80c0a643213cf3ffd4a87c005bb1acca7
       </ThemeProvider>
     </>
   );
