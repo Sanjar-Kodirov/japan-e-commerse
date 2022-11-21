@@ -14,21 +14,15 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <Navbar />
+        <Header />
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/about" element={<ProductCard />} />
           </Route>
         </Routes>
-<<<<<<< HEAD
         <Footer />
-=======
-        <Typography backgroundColor="" color="">
-        <Navbar/>
-          <Header />
-          <Footer/>
-        </Typography>
->>>>>>> a50219f80c0a643213cf3ffd4a87c005bb1acca7
       </ThemeProvider>
     </>
   );
