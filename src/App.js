@@ -9,6 +9,7 @@ import Layout from "./components/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductCard from "./components/ProductCard";
+import About from './components/About'
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
             <Route path="/about" element={<ProductCard />} />
           </Route>
         </Routes>
+        <About/>
         <Footer />
       </ThemeProvider>
     </>
