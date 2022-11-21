@@ -3,6 +3,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import { CssBaseline } from "@mui/material";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Layout from "./components/Layout";
 import { Routes, Route } from "react-router-dom";
@@ -20,7 +21,9 @@ function App() {
           </Route>
         </Routes>
         <Typography backgroundColor="" color="">
-          <ProductCard/>
+        <Navbar/>
+          <Header />
+          <Footer/>
         </Typography>
       </ThemeProvider>
     </>

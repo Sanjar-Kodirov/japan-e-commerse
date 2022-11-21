@@ -29,7 +29,7 @@ const Footer = () => {
                 </Typography>
               </Typography>
             </Box>
-            <ImageListItem sx={{ width: 300, height: 20 }}>
+            <ImageListItem sx={{ width: 200, height: 20 }}>
 
               <img
                 src={`${logo}`}
@@ -47,7 +47,7 @@ const Footer = () => {
       </Box>
       <Box sx={{ backgroundColor: "text.primary" }}>
         <Container>
-          <Box sx={{ display: "flex", alignItems: "center", padding: "3rem 0", color: "neutral.100" }}>
+          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "3rem 0", color: "neutral.100" }}>
             <Box sx={{ display: "flex", alignItems: "center", gap: "3rem" }}>
               <Typography variant="p">
                 会社概要
@@ -61,8 +61,9 @@ const Footer = () => {
               <Typography variant="p">
                 プライバシーポリシー
               </Typography>
-              <Button variant="contained" sx={{ borderRadius: "0" }}>公式 SNS</Button>
+              
               <Box sx={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+              <Button variant="contained" sx={{ borderRadius: "0" }}>公式 SNS</Button>
                 <FacebookOutlinedIcon />
                 <InstagramIcon />
                 <TwitterIcon />
