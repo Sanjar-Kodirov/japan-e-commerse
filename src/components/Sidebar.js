@@ -20,6 +20,7 @@ const Sidebar = () => {
   const sidebarItems = categories.map((item) => {
     return (
       <Box
+        key={item}
         sx={{
           display: "flex",
           alignItems: "center",
@@ -48,7 +49,7 @@ const Sidebar = () => {
 
   const contentList = content.map((item) => {
     return (
-      <Box>
+      <Box key={item}>
         <Typography
           sx={{
             py: "20px",

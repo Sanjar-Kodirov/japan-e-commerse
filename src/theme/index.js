@@ -37,7 +37,7 @@ export const theme = createTheme({
         textSizeLarge: {
           padding: "12px 16px",
         },
-        iconSize:{
+        iconSize: {
           padding: "0 30px",
         },
       },
@@ -167,7 +167,7 @@ export const theme = createTheme({
       contrastText: "#FFFFFF",
     },
     secondary: {
-      main: "#d84516",
+      main: "#D14343",
       light: "#d84416",
       dark: "#0B815A",
       contrastText: "#FFFFFF",
@@ -192,7 +192,6 @@ export const theme = createTheme({
     },
 
     error: {
-
       main: "#D14343",
       light: "#DA6868",
       dark: "#922E2E",
