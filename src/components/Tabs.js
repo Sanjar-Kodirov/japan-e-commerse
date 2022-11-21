@@ -4,6 +4,8 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import DeliveryBox from "./DeliveryBox/DeliveryBox";
+import { wantToSellCards, wantToBuyCards } from "../_mock_/deliveryCardInfo";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -17,7 +19,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ mt: 3 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -56,7 +58,7 @@ export default function BasicTabs() {
     <Box sx={{ width: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
-          value={1}
+          value={value}
           onChange={handleChange}
           initialSelectedIndex={0}
           aria-label="indicator example"
@@ -100,11 +102,19 @@ export default function BasicTabs() {
           />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        Tab One
+      <TabPanel
+        classes={{
+          "& .MuiBox-root": {
+            padding: "0px",
+          },
+        }}
+        value={value}
+        index={0}
+      >
+        <DeliveryBox data={wantToSellCards} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        Tab Two
+        <DeliveryBox data={wantToBuyCards} />
       </TabPanel>
     </Box>
   );
