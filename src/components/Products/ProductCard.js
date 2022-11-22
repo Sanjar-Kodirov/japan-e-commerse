@@ -3,17 +3,26 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { Box, CardActionArea } from "@mui/material";
-import imgCard from "../assets/product1.jpg";
+import { Box, CardActionArea, Grid } from "@mui/material";
 import { Container } from "@mui/system";
 
-export default function ActionAreaCard() {
+export default function ActionAreaCard({ product }) {
+  const { title, price, image } = product;
   return (
-    <Box>
-      <Container>
+    <Grid
+      justifyContent="center"
+      // alignItems="center"
+      item
+      xs={12}
+      sm={12}
+      md={6}
+      lg={4}
+    >
+      <Box sx={{ mx: "auto" }} variant="div">
         <Card
           sx={{
             maxWidth: 345,
+            mx: "auto",
             border: "none",
             borderRadius: "0",
             boxShadow: "none",
@@ -24,20 +33,20 @@ export default function ActionAreaCard() {
             <CardMedia
               component="img"
               height="280"
-              image={imgCard}
+              image={image}
               alt="green iguana"
             />
             <CardContent sx={{ backgroundColor: "none", padding: "10px" }}>
               <Typography gutterBottom variant="h6" component="div">
-                商品名商品名商品名
+                {title}
               </Typography>
               <Typography variant="p" color="secondary">
-                ￥0,000( 税込 )
+                ￥{price}( 税込 )
               </Typography>
             </CardContent>
           </CardActionArea>
         </Card>
-      </Container>
-    </Box>
+      </Box>
+    </Grid>
   );
 }

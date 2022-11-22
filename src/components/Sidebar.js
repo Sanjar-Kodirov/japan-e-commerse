@@ -5,18 +5,24 @@ import {
   Search,
   Twitter,
 } from "@mui/icons-material";
-import {
-  Typography,
-  FormControl,
-  InputLabel,
-  OutlinedInput,
-  InputAdornment,
-  IconButton,
-  TextField,
-} from "@mui/material";
-import { categories, content } from "../_mock_/categories";
+import { Typography, InputAdornment, TextField } from "@mui/material";
+// import { categories, content } from "../_mock_/categories";
+import { content } from "../_mock_/categories";
 import { Box } from "@mui/system";
+import { useSelector, useDispatch } from "react-redux";
+
+import {
+  selectProductCategories,
+  fetchProductsByCategory,
+} from "../features/api/productsSlice";
 const Sidebar = () => {
+  const dispatch = useDispatch();
+  const categories = useSelector(selectProductCategories);
+
+  const handleClick = (event) => {
+    dispatch(fetchProductsByCategory(event));
+  };
+
   const sidebarItems = categories.map((item) => {
     return (
       <Box
@@ -31,10 +37,19 @@ const Sidebar = () => {
       >
         <Typography
           sx={{
-            py: "20px",
-            mx: "sizeSmall",
+            my: "16px",
+            py: "2px",
+            px: "10px",
+            borderRadius: "5px",
+            // mx: "sizeSmall",
+            cursor: "pointer",
+            "&:hover": {
+              color: "white",
+              backgroundColor: "primary.main",
+            },
           }}
           variant="p"
+          onClick={() => handleClick(item)}
         >
           {item}
         </Typography>
