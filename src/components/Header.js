@@ -1,5 +1,5 @@
 import { Height } from '@mui/icons-material';
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Grid } from '@mui/material'
 import React from 'react'
 import bacgroud1 from '../assets/bg/hedaer1.png'
 import bacgroud2 from '../assets/bg/hedaer2.png'
@@ -23,30 +23,38 @@ const Header = () => {
   };
 
   return (
-    <Box sx={{ display: "flex", alignItems: "center", gap: "20px"}}>
-      <Box style={styles.paperContainer} sx={{ height: "60vh"}}>
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "90vh", color: "neutral.100", textAlign: "center"}}>
-          <Typography variant="h2">
-            不要在庫を何でも買い取り
-            <br/>
-            お客様の経営を
-            <br/>
-            サポートいたします！
-          </Typography>
-        </Box>
-      </Box>
-      <Box style={styles2.paperContainer2}>
-        <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "90vh", color: "neutral.100", textAlign: "center" }}>
-          <Typography variant="h2">
-          不要在庫を何でも買い取り
-            <br/>
-            お客様の経営を
-            <br/>
-            サポートいたします！
-          </Typography>
-        </Box>
-      </Box>
-    </Box>
+    <Box>
+      <Grid container spacing={2}>
+        <Grid item xs={12} sm={12} md={6}>
+          <Box style={styles.paperContainer} sx={{ height: "60vh" }}>
+            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "90vh", color: "neutral.100", textAlign: "center" }}>
+              <Typography variant="h2">
+                不要在庫を何でも買い取り
+                <br />
+                お客様の経営を
+                <br />
+                サポートいたします！
+              </Typography>
+            </Box>
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={12} md={6}>
+          <Box style={styles2.paperContainer2}>
+            <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", height: "90vh", color: "neutral.100", textAlign: "center" }}>
+              <Typography variant="h2">
+                不要在庫を何でも買い取り
+                <br />
+                お客様の経営を
+                <br />
+                サポートいたします！
+              </Typography>
+            </Box>
+          </Box>
+        </Grid>
+
+      </Grid>
+
+    </Box >
   )
 }
 
