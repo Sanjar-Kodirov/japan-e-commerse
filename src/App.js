@@ -7,13 +7,19 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
+import ProductCard from "./components/ProductCard";
+import About from './components/About';
+
+
 import Products from "./pages/Products";
+
 function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Navbar />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />

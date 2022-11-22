@@ -12,7 +12,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 const Footer = () => {
   return (
     <Box>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1,  display: { xs: 'none', sm: 'none', md: 'block' } }}>
         <Container>
           <Box sx={{ display: 'flex', justifyContent: "space-between", alignItems: "center",  padding: "3rem 0" }}>
             <Box>
