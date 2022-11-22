@@ -2,11 +2,8 @@ import { Box } from "@mui/material";
 import React from "react";
 import Header from "../components/Header";
 import Layout from "../components/Layout";
-import { useSelector } from "react-redux";
-
 import Tabs from "../components/Tabs";
 const Home = () => {
-
   return (
     <>
       <Header />
