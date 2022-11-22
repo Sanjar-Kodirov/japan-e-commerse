@@ -17,7 +17,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Navbar />
-        <Header />
+        <Header /> 
         <ProductCategory/>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -25,7 +25,6 @@ function App() {
             <Route path="/about" element={<ProductCard />} />
           </Route>
         </Routes>
-        {/* <About/> */}
         <Footer />
       </ThemeProvider>
     </>

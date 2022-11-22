@@ -36,11 +36,10 @@ export default function ResponsiveGrid() {
 
                     {itemData.map(el => {
                         return (
-                            <Grid item xs={12} md={2.3}>
-                                <Card sx={{ maxWidth: 280, borderRadius: "0" }}>
+                            <Grid item xs={12} md={2.3} sm={6}>
+                                <Card sx={{ maxWidth: 250, borderRadius: "0", m: "auto", p: '0' }}>
                                     <CardMedia
                                         component="img"
-                                        height="240"
                                         image={el.img}
                                         alt="green iguana"
                                     />
