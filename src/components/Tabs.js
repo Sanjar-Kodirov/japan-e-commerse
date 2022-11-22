@@ -5,13 +5,22 @@ import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import DeliveryBox from "./DeliveryBox/DeliveryBox";
+import { ImageListItem } from "@mui/material";
 import { wantToSellCards, wantToBuyCards } from "../_mock_/deliveryCardInfo";
 import ProductsContainer from "./Products/ProductsContainer";
+import ProductCategory from "./ProductCategory";
 import { useSelector } from "react-redux";
+import img from "../assets/buy_banner.jpg";
+import free_appraisal from "../assets/free_appraisal.png";
+import problem from "../assets/problem.png";
+import sell_banner from "../assets/sell_banner.jpg";
 import {
   selectAllProducts,
   selectProductStatus,
 } from "../features/api/productsSlice";
+import ServicesContainer from "./Services/ServicesContainer";
+import { buySteps, howToBuy, servicesSteps } from "../_mock_/howToWork";
+import Issue from "./Issue/Issue";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -121,10 +130,61 @@ export default function BasicTabs() {
         <Box>
           <DeliveryBox data={wantToSellCards} />
           <ProductsContainer data={productsData.slice(0, 9)} status={status} />
+          <ServicesContainer />
+          <DeliveryBox>
+            <ProductCategory />
+          </DeliveryBox>
+          <ServicesContainer title="ご利用ステップ" data={buySteps} />
+          <ImageListItem
+            sx={{
+              width: "100%",
+              mx: "auto",
+              my: 8,
+              display: { sm: "none", xs: "none" },
+            }}
+          >
+            <img src={img} alt={"some title"} loading="lazy" />
+          </ImageListItem>
         </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <DeliveryBox data={wantToBuyCards} />
+        <ImageListItem sx={{ width: "100%", mx: "auto", my: 8 }}>
+          <img src={free_appraisal} alt={"some title"} loading="lazy" />
+        </ImageListItem>
+
+        <ImageListItem sx={{ width: "100%", mx: "auto", my: 8 }}>
+          <img src={problem} alt={"some title"} loading="lazy" />
+        </ImageListItem>
+
+        <ServicesContainer
+          title="在庫買取サービスで解決!!"
+          data={servicesSteps}
+        />
+
+        <DeliveryBox>
+          <ProductCategory />
+        </DeliveryBox>
+        <ServicesContainer title="買取ステップ" data={howToBuy} />
+        <ImageListItem
+          sx={{
+            width: "100%",
+            mx: "auto",
+            display: { sm: "none", xs: "none" },
+          }}
+        >
+          <img src={free_appraisal} alt={"some title"} loading="lazy" />
+        </ImageListItem>
+        <ImageListItem
+          sx={{
+            width: "100%",
+            mx: "auto",
+            my: 8,
+            display: { md: "block", xs: "none" },
+          }}
+        >
+          <img src={sell_banner} alt={"some title"} loading="lazy" />
+        </ImageListItem>
       </TabPanel>
     </Box>
   );
