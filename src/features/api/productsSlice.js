@@ -9,10 +9,11 @@ const PRODUCTS_URL = "https://fakestoreapi.com/products";
 
 const initialState = {
   products: [],
+  categories: [],
   status: "idle", //'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
-
+// get all products
 export const fetchProducts = createAsyncThunk(
   "products/fetchPosts",
   async () => {
@@ -20,6 +21,25 @@ export const fetchProducts = createAsyncThunk(
     return response.data;
   }
 );
+
+// Get products in a specific category
+export const fetchProductsByCategory = createAsyncThunk(
+  "products/fetchProductsByCategory",
+  async (category) => {
+    const response = await axios.get(`${PRODUCTS_URL}/category/${category}`);
+    return response.data;
+  }
+);
+
+// fetch all categories
+export const fetchCategories = createAsyncThunk(
+  "products/fetchCategories",
+  async () => {
+    const response = await axios.get(`${PRODUCTS_URL}/categories`);
+    return response.data;
+  }
+);
+
 export const addNewProduct = createAsyncThunk(
   "posts/addNewPost",
   async (initialPost) => {
@@ -59,6 +79,11 @@ const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
+    // getAllCategories: (state, action) => {
+    //   const categories = state.products.map((product) => product.category);
+    //   const uniqueCategories = [...new Set(categories)];
+    //   return uniqueCategories;
+    // },
     // addNewProduct(state, action) {
     //     state.products.push(action.payload);
     // },
@@ -77,6 +102,7 @@ const productSlice = createSlice({
   },
   extraReducers(builder) {
     builder
+      // fetch all products
       .addCase(fetchProducts.pending, (state, action) => {
         state.status = "loading";
       })
@@ -85,6 +111,21 @@ const productSlice = createSlice({
         state.products = state.products.concat(action.payload);
       })
       .addCase(fetchProducts.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(fetchCategories.fulfilled, (state, action) => {
+        state.categories = action.payload;
+      })
+      // fetch products by category
+      .addCase(fetchProductsByCategory.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(fetchProductsByCategory.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.products = action.payload;
+      })
+      .addCase(fetchProductsByCategory.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       })
@@ -110,6 +151,7 @@ export const selectAllProducts = (state) => state.products.products;
 export const selectProductById = (state, productId) =>
   state.products.products.find((product) => product.id === productId);
 export const selectProductStatus = (state) => state.products.status;
+export const selectProductCategories = (state) => state.products.categories;
 
 export const selectProductByCategory = createSelector(
   [selectAllProducts, (state, category) => category],

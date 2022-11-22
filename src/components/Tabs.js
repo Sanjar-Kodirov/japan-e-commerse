@@ -7,7 +7,11 @@ import Box from "@mui/material/Box";
 import DeliveryBox from "./DeliveryBox/DeliveryBox";
 import { wantToSellCards, wantToBuyCards } from "../_mock_/deliveryCardInfo";
 import ProductsContainer from "./Products/ProductsContainer";
-
+import { useSelector } from "react-redux";
+import {
+  selectAllProducts,
+  selectProductStatus,
+} from "../features/api/productsSlice";
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -54,9 +58,11 @@ export default function BasicTabs() {
     //setValue(event);
     console.log(event);
   };
+  const productsData = useSelector(selectAllProducts);
+  const status = useSelector(selectProductStatus);
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", pl: 2, pt: 2 }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}
@@ -112,8 +118,10 @@ export default function BasicTabs() {
         value={value}
         index={0}
       >
-        <DeliveryBox data={wantToSellCards} />
-        <ProductsContainer />
+        <Box>
+          <DeliveryBox data={wantToSellCards} />
+          <ProductsContainer data={productsData.slice(0, 9)} status={status} />
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
         <DeliveryBox data={wantToBuyCards} />

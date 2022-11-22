@@ -1,21 +1,16 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 import { useSelector } from "react-redux";
-import {
-  selectAllProducts,
-  selectProductStatus,
-} from "../../features/api/productsSlice";
-import { Grid, Typography } from "@mui/material";
-const ProductsContainer = ({ data }) => {
-  const productsData = useSelector(selectAllProducts);
-  const status = useSelector(selectProductStatus);
+import { LinearProgress } from "@material-ui/core";
 
-  const products = productsData.map((product) => {
+import { Grid, Typography } from "@mui/material";
+const ProductsContainer = ({ status, data = [] }) => {
+  const products = data.map((product) => {
     return <ProductCard key={product.id} product={product} />;
   });
 
   if (status === "loading") {
-    return <div>Loading...</div>;
+    return <LinearProgress />;
   }
 
   return (

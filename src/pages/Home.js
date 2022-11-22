@@ -1,12 +1,19 @@
 import { Box } from "@mui/material";
 import React from "react";
-import CenteredTabs from "../components/Tabs";
 import Header from "../components/Header";
+import Layout from "../components/Layout";
+import { useSelector } from "react-redux";
+
+import Tabs from "../components/Tabs";
 const Home = () => {
+
   return (
     <>
+      <Header />
       <Box sx={{ backgroundColor: "", flexGrow: 2, pl: "2rem", pt: "20px" }}>
-        <CenteredTabs />
+        <Layout>
+          <Tabs />
+        </Layout>
       </Box>
     </>
   );
