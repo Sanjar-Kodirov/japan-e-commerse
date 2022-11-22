@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import DeliveryBox from "./DeliveryBox/DeliveryBox";
 import { wantToSellCards, wantToBuyCards } from "../_mock_/deliveryCardInfo";
+import ProductsContainer from "./Products/ProductsContainer";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -112,6 +113,7 @@ export default function BasicTabs() {
         index={0}
       >
         <DeliveryBox data={wantToSellCards} />
+        <ProductsContainer />
       </TabPanel>
       <TabPanel value={value} index={1}>
         <DeliveryBox data={wantToBuyCards} />
