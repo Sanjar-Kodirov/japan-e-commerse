@@ -25,7 +25,7 @@ function App() {
             <Route path="/about" element={<ProductCard />} />
           </Route>
         </Routes>
-        <About/>
+        {/* <About/> */}
         <Footer />
       </ThemeProvider>
     </>
