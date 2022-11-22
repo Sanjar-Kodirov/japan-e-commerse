@@ -1,11 +1,9 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useMatch } from "react-router-dom";
 import { Container } from "@mui/system";
 import { Box } from "@mui/system";
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
-import Navbar from "./Navbar";
-const Layout = () => {
+const Layout = ({ children }) => {
   return (
     <>
       <Container>
@@ -16,7 +14,7 @@ const Layout = () => {
           }}
         >
           <Sidebar />
-          <Outlet sx={{ flexGrow: 1 }} />
+          {children}
         </Box>
       </Container>
     </>
