@@ -9,7 +9,8 @@ import Layout from "./components/Layout";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductCard from "./components/ProductCard";
-import About from './components/About'
+import About from './components/About';
+import ProductCategory from './components/ProductCategory'
 function App() {
   return (
     <>
@@ -17,6 +18,7 @@ function App() {
         <CssBaseline />
         <Navbar />
         <Header />
+        <ProductCategory/>
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
