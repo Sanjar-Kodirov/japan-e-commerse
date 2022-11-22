@@ -14,7 +14,6 @@ const Layout = ({ children }) => {
           }}
         >
           <Sidebar />
-          {/* <Outlet sx={{ flexGrow: 1 }} /> */}
           {children}
         </Box>
       </Container>
