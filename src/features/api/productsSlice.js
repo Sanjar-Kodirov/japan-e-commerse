@@ -9,6 +9,7 @@ const PRODUCTS_URL = "https://fakestoreapi.com/products";
 
 const initialState = {
   products: [],
+  product: null,
   categories: [],
   status: "idle", //'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
@@ -36,6 +37,15 @@ export const fetchCategories = createAsyncThunk(
   "products/fetchCategories",
   async () => {
     const response = await axios.get(`${PRODUCTS_URL}/categories`);
+    return response.data;
+  }
+);
+
+// fetch a single product
+export const fetchProduct = createAsyncThunk(
+  "products/fetchProduct",
+  async (id) => {
+    const response = await axios.get(`${PRODUCTS_URL}/${id}`);
     return response.data;
   }
 );
@@ -114,6 +124,19 @@ const productSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       })
+      // fetch single product
+      .addCase(fetchProduct.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(fetchProduct.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.product = action.payload;
+      })
+      .addCase(fetchProduct.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      // fetch all categories
       .addCase(fetchCategories.fulfilled, (state, action) => {
         state.categories = action.payload;
       })
@@ -148,6 +171,7 @@ const productSlice = createSlice({
 });
 
 export const selectAllProducts = (state) => state.products.products;
+export const selectProduct = (state) => state.products.product;
 export const selectProductById = (state, productId) =>
   state.products.products.find((product) => product.id === productId);
 export const selectProductStatus = (state) => state.products.status;
