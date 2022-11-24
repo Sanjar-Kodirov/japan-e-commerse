@@ -48,21 +48,20 @@ const Footer = () => {
       <Box sx={{ backgroundColor: "text.primary" }}>
         <Container>
           <Box sx={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "3rem 0", color: "neutral.100" }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: "3rem" }}>
-              <Typography variant="p">
+            <Box sx={{ display: {sm: "block", md: "flex"}, alignItems: "center", gap: "3rem", lineHeight: "60px" }}>
+              <Typography variant="subtitle1">
                 会社概要
               </Typography>
-              <Typography variant="p">
+              <Typography variant="subtitle1">
                 ご利用ガイド
               </Typography>
-              <Typography variant="p">
+              <Typography variant="subtitle1">
                 特定商取引法に基づく表記
               </Typography>
-              <Typography variant="p">
+              <Typography variant="subtitle1">
                 プライバシーポリシー
               </Typography>
-              
-              <Box sx={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: "1.5rem", marginTop: 2 }}>
               <Button variant="contained" sx={{ borderRadius: "0" }}>公式 SNS</Button>
                 <FacebookOutlinedIcon />
                 <InstagramIcon />
