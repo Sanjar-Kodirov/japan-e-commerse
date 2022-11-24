@@ -71,7 +71,18 @@ export default function BasicTabs() {
   const status = useSelector(selectProductStatus);
 
   return (
-    <Box sx={{ width: "100%", pl: 2, pt: 2 }}>
+    <Box
+      sx={{
+        width: "100%",
+        pl: {
+          xs: 0,
+          sm: 0,
+          md: 2,
+          lg: 2,
+        },
+        pt: 2,
+      }}
+    >
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}

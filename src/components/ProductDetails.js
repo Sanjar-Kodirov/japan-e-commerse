@@ -15,7 +15,6 @@ import CardMedia from "@mui/material/CardMedia";
 import BoxBorder from "./BoxBorder";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
-import Skeleton from "@mui/material/Skeleton";
 
 import Layout from "./Layout";
 import { useDispatch, useSelector } from "react-redux";
@@ -83,7 +82,7 @@ export default function RowAndColumnSpacing() {
             rowSpacing={1}
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            <Grid item md={8} sx={{ display: "flex", alignItems: "center" }}>
+            <Grid item md={7} sx={{ display: "flex", alignItems: "center" }}>
               <Item
                 sx={{
                   background: "none",
@@ -120,7 +119,7 @@ export default function RowAndColumnSpacing() {
                 </Box>
               </Item>
             </Grid>
-            <Grid item md={4} sx={{ width: "100%" }}>
+            <Grid item md={5} sx={{ width: "100%" }}>
               <Item sx={{ backgroundColor: "neutral.200", borderRadius: "0" }}>
                 <Box sx={{ padding: "2rem 1rem" }}>
                   <Box

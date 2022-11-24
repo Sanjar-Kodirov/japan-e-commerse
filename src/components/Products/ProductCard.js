@@ -4,7 +4,6 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { Box, CardActionArea, Grid } from "@mui/material";
-import { Container } from "@mui/system";
 import { Link } from "react-router-dom";
 
 export default function ActionAreaCard({ product }) {
@@ -15,11 +14,15 @@ export default function ActionAreaCard({ product }) {
       // alignItems="center"
       item
       xs={12}
-      sm={12}
-      md={6}
+      sm={6}
+      md={4}
       lg={4}
     >
-      <Link underline="none" to={`/products/${product.id}`} style={{ textDecoration: 'none' }}>
+      <Link
+        underline="none"
+        to={`/products/${product.id}`}
+        style={{ textDecoration: "none" }}
+      >
         <Box sx={{ mx: "auto" }} variant="div">
           <Card
             sx={{
@@ -50,7 +53,6 @@ export default function ActionAreaCard({ product }) {
           </Card>
         </Box>
       </Link>
-     
     </Grid>
   );
 }
