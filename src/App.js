@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./components/About";
+import Drawer from "./components/Drawer";
 import ProductDetails from "./components/ProductDetails";
 
 import Products from "./pages/Products";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/about" element={<About />} />
         </Routes>
         <Footer />
+        <Drawer />
       </ThemeProvider>
     </>
   );

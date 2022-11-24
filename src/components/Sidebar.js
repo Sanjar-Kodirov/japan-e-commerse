@@ -15,6 +15,7 @@ import {
   selectProductCategories,
   fetchProductsByCategory,
 } from "../features/api/productsSlice";
+
 const Sidebar = () => {
   const dispatch = useDispatch();
   const categories = useSelector(selectProductCategories);
