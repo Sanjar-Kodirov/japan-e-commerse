@@ -24,20 +24,10 @@ export default function ResponsiveGrid() {
   return (
     <Box sx={{ flexGrow: 1, mt: 2 }}>
       <Container>
-        {/* <Typography variant="h3" align="center">
-          買取商品カテゴリー
-        </Typography> */}
-        {/* <Box sx={{ borderBottom: "1px dotted gray", mb: 2, py: 2 }}></Box>
-        <Typography
-          variant="p"
-          sx={{ display: "flex", justifyContent: "center", py: 3 }}
-        >
-          幅広い商品に対応させていただきます！
-        </Typography> */}
         <Grid container spacing={1}>
           {itemData.map((el) => {
             return (
-              <Grid item xs={12} md={2.3} sm={6}>
+              <Grid key={el.id} item xs={6} md={2.3} sm={4} sx={6}>
                 <Card
                   sx={{ maxWidth: 250, borderRadius: "0", m: "auto", p: "0" }}
                 >

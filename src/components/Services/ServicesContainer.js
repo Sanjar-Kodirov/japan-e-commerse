@@ -9,7 +9,9 @@ import { Typography } from "@mui/material";
 const ServicesContainer = ({ data = [], title }) => {
   const services = data.map((item) => {
     const { img, title } = item;
-    return <ServicesCard img={img} title="STEP1" subTitle={title} />;
+    return (
+      <ServicesCard key={title} img={img} title="STEP1" subTitle={title} />
+    );
   });
   return (
     <Box sx={{ py: 8 }}>

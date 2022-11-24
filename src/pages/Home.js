@@ -7,7 +7,19 @@ const Home = () => {
   return (
     <>
       <Header />
-      <Box sx={{ backgroundColor: "", flexGrow: 2, pl: "2rem", pt: "20px" }}>
+      <Box
+        sx={{
+          backgroundColor: "",
+          flexGrow: 2,
+          pl: {
+            xs: 0,
+            sm: 0,
+            md: 0,
+            lg: 2,
+          },
+          pt: "20px",
+        }}
+      >
         <Layout>
           <Tabs />
         </Layout>

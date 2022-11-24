@@ -20,6 +20,7 @@ import {
 } from "../features/siteFeatures/localFeaturesSlice";
 import img from "../assets/black_white_logo.png";
 import { Close } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 export const MuiDrawer = () => {
   const style = {
     textAlign: "center",
@@ -31,21 +32,42 @@ export const MuiDrawer = () => {
   };
 
   const drawerData = [
-    "トップページ",
-    "商品一覧",
-    "ご利用ガイド",
-    "特定商取引法に基づく表記",
-    "   お問い合わせ",
+    {
+      id: 1,
+      title: "トップページ",
+      link: "/",
+    },
+    {
+      id: 2,
+      title: "商品一覧",
+      link: "/products",
+    },
+    {
+      id: 3,
+      title: "ご利用ガイド",
+      link: "/contact",
+    },
+    {
+      id: 4,
+      title: "特定商取引法に基づく表記",
+      link: "/contact",
+    },
+    {
+      id: 5,
+      title: "お問い合わせ",
+    },
   ];
 
   const list = drawerData.map((text) => {
     return (
-      <>
-        <ListItem sx={{ textAlign: "center", p: 2 }} button>
-          <ListItemText primary={text} />
+      <Box variant="div" key={text.id}>
+        <ListItem key="text" sx={{ textAlign: "center", p: 2 }} button>
+          <Link style={{ textAlign: "center" }} to={text.link}>
+            <ListItemText sx={{ textAlign: "center" }} primary={text.title} />
+          </Link>
         </ListItem>
         <Divider />
-      </>
+      </Box>
     );
   });
   const dispatch = useDispatch();
@@ -89,9 +111,9 @@ export const MuiDrawer = () => {
         <Box
           sx={{
             width: {
-              xs: 450,
-              sm: 200,
-              md: 250,
+              xs: "100%",
+              sm: 300,
+              md: 450,
               lg: 450,
               xl: 450,
             },

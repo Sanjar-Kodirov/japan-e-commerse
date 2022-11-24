@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
         <Box
           sx={{
             display: "flex",
+            flexDirection: { xs: "column", sm: "column", md: "row" },
             justifyContent: "space-between",
           }}
         >
