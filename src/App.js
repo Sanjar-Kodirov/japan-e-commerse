@@ -23,7 +23,7 @@ function App() {
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/about" element={<About />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </ThemeProvider>
     </>
   );

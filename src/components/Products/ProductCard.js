@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { Box, CardActionArea, Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import { Link } from "react-router-dom";
+
 export default function ActionAreaCard({ product }) {
   const { title, price, image } = product;
   return (
@@ -18,7 +19,7 @@ export default function ActionAreaCard({ product }) {
       md={6}
       lg={4}
     >
-      <Link to={`/products/${product.id}`}>
+      <Link underline="none" to={`/products/${product.id}`} style={{ textDecoration: 'none' }}>
         <Box sx={{ mx: "auto" }} variant="div">
           <Card
             sx={{
@@ -49,6 +50,7 @@ export default function ActionAreaCard({ product }) {
           </Card>
         </Box>
       </Link>
+     
     </Grid>
   );
 }
