@@ -1,5 +1,6 @@
-import { Box } from "@mui/system";
 import React from "react";
+
+import { Box } from "@mui/system";
 import ServicesCard from "./ServicesCard";
 import Sell1 from "../../assets/sell_step1.png";
 import Sell2 from "../../assets/sell_step2.png";
