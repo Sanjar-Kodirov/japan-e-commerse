@@ -98,28 +98,7 @@ export const deleteProduct = createAsyncThunk(
 const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {
-    // getAllCategories: (state, action) => {
-    //   const categories = state.products.map((product) => product.category);
-    //   const uniqueCategories = [...new Set(categories)];
-    //   return uniqueCategories;
-    // },
-    // addNewProduct(state, action) {
-    //     state.products.push(action.payload);
-    // },
-    // updateProduct(state, action) {
-    //     const { id, title, body } = action.payload;
-    //     const existingPost = state.products.find((post) => post.id === id);
-    //     if (existingPost) {
-    //         existingPost.title = title;
-    //         existingPost.body = body;
-    //     }
-    // },
-    // deleteProduct(state, action) {
-    //     const { id } = action.payload;
-    //     return state.products.filter((post) => post.id !== id);
-    // },
-  },
+  reducers: {},
   extraReducers(builder) {
     builder
       // fetch all products
