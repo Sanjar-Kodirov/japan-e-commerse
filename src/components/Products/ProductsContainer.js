@@ -102,6 +102,11 @@ const ProductsContainer = ({ status, data = [] }) => {
         }}
       >
         {products}
+
+        <Stack spacing={2} sx={{ m: "auto", py: 4 }}>
+          <Pagination count={3} align="center" variant="outlined" shape="rounded"/>
+        </Stack>
+
       </Grid>
     </>
   );
