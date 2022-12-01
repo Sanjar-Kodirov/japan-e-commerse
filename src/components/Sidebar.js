@@ -1,3 +1,4 @@
+import React from "react";
 import {
   ArrowRight,
   Facebook,
@@ -15,6 +16,8 @@ import {
   selectProductCategories,
   fetchProductsByCategory,
 } from "../features/api/productsSlice";
+import { Link } from "react-router-dom";
+
 const Sidebar = () => {
   const dispatch = useDispatch();
   const categories = useSelector(selectProductCategories);
@@ -86,7 +89,18 @@ const Sidebar = () => {
   });
 
   return (
-    <Box sx={{ width: "20%" }}>
+    <Box
+      variant="div"
+      sx={{
+        width: {
+          xs: "100%",
+          sm: "100%",
+          md: 350,
+          lg: 450,
+          xl: 450,
+        },
+      }}
+    >
       <Typography
         sx={{
           my: "20px",
@@ -98,6 +112,7 @@ const Sidebar = () => {
 
       <TextField
         sx={{
+          width: "100%",
           mb: "40px",
         }}
         InputProps={{
@@ -121,6 +136,42 @@ const Sidebar = () => {
       >
         カテゴリー
       </Typography>
+
+      {/* categories */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          mb: "sizeLarge",
+          pl: "20px",
+        }}
+      >
+        <Typography
+          sx={{
+            my: "16px",
+            py: "2px",
+            px: "10px",
+            borderRadius: "5px",
+            // mx: "sizeSmall",
+            cursor: "pointer",
+            "&:hover": {
+              color: "white",
+              backgroundColor: "primary.main",
+            },
+          }}
+          variant="p"
+        >
+          <Link style={{ color: "black" }} to="/products">
+            全て
+          </Link>
+        </Typography>
+        <ArrowRight
+          sx={{
+            color: "primary.main",
+          }}
+        />
+      </Box>
       {sidebarItems}
       <Box
         sx={{

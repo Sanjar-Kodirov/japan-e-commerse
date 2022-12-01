@@ -1,5 +1,6 @@
-import { Box } from "@mui/system";
 import React from "react";
+
+import { Box } from "@mui/system";
 import ServicesCard from "./ServicesCard";
 import Sell1 from "../../assets/sell_step1.png";
 import Sell2 from "../../assets/sell_step2.png";
@@ -9,7 +10,9 @@ import { Typography } from "@mui/material";
 const ServicesContainer = ({ data = [], title }) => {
   const services = data.map((item) => {
     const { img, title } = item;
-    return <ServicesCard img={img} title="STEP1" subTitle={title} />;
+    return (
+      <ServicesCard key={title} img={img} title="STEP1" subTitle={title} />
+    );
   });
   return (
     <Box sx={{ py: 8 }}>

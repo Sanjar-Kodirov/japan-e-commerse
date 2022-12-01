@@ -14,6 +14,7 @@ const initialState = {
   status: "idle", //'idle' | 'loading' | 'succeeded' | 'failed'
   error: null,
 };
+
 // get all products
 export const fetchProducts = createAsyncThunk(
   "products/fetchPosts",
@@ -28,6 +29,15 @@ export const fetchProductsByCategory = createAsyncThunk(
   "products/fetchProductsByCategory",
   async (category) => {
     const response = await axios.get(`${PRODUCTS_URL}/category/${category}`);
+    return response.data;
+  }
+);
+
+// get paginated products
+export const fetchPaginatedProducts = createAsyncThunk(
+  "products/fetchPaginatedProducts",
+  async (page) => {
+    const response = await axios.get(`${PRODUCTS_URL}/?limit=${page}`);
     return response.data;
   }
 );
@@ -124,6 +134,18 @@ const productSlice = createSlice({
         state.status = "failed";
         state.error = action.error.message;
       })
+      // fetch paginated products
+      .addCase(fetchPaginatedProducts.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(fetchPaginatedProducts.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.products = action.payload;
+      })
+      .addCase(fetchPaginatedProducts.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
       // fetch single product
       .addCase(fetchProduct.pending, (state, action) => {
         state.status = "loading";
@@ -138,7 +160,7 @@ const productSlice = createSlice({
       })
       // fetch all categories
       .addCase(fetchCategories.fulfilled, (state, action) => {
-        state.categories = action.payload;
+        state.categories = [...action.payload];
       })
       // fetch products by category
       .addCase(fetchProductsByCategory.pending, (state, action) => {

@@ -1,29 +1,28 @@
-import Typography from "@mui/material/Typography";
+import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
 import { CssBaseline } from "@mui/material";
+
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./components/About";
-import ProductDetails from "./components/ProductDetails";
 
-import Products from "./pages/Products";
+import { Routes, Route } from "react-router-dom";
+import { routes } from "./routes";
+
+import Drawer from "./components/Drawer";
 
 function App() {
+  const routers = routes.map((route) => (
+    <Route key={route.name} path={route.path} element={route.component} />
+  ));
   return (
     <>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/:id" element={<ProductDetails />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
+        <Routes>{routers}</Routes>
         <Footer />
+        <Drawer />
       </ThemeProvider>
     </>
   );

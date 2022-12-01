@@ -1,5 +1,5 @@
-import { Box, Typography, ImageListItem } from "@mui/material";
 import React from "react";
+import { Box, Typography, ImageListItem } from "@mui/material";
 
 const ServicesCard = ({ img, title, subTitle }) => {
   return (
